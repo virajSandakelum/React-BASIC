@@ -5,6 +5,7 @@ import Product from './components/Product'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar';
+import Pami from './components/Pami'
 
 
 function App () {
@@ -12,14 +13,15 @@ function App () {
 
   return (
     <>
-    <Navbar/>
-      <Router>
+    {/* <Navbar/> */}
+      <Pami />
+      {/* <Router>
         <Routes>
           <Route index path='/' element={<Product />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/dashboard' element={<Dashboard />} />
         </Routes>
-      </Router>
+      </Router> */}
     </>
   )
 }
