@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './product.css'
+import { useDispatch } from 'react-redux';
+import { add } from '../store/cardSlice'
+
 
 const Product = () => {
     const [product, setProduct] = useState([]);
@@ -11,6 +14,14 @@ const Product = () => {
             .then((response) => response.json())
             .then((data) => setProduct(data));
     }, []);
+
+
+    const dispatch = useDispatch();
+
+    function addToCart (item) {
+        dispatch(add(item));
+    }
+
 
     return (
         <div>
@@ -24,7 +35,7 @@ const Product = () => {
                                 Some quick example text to build on the card title and make up the
                                 bulk of the card's content.
                             </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
+                            <Button variant="primary" onClick={() => addToCart(item)}>Add</Button>
                         </Card.Body>
                     </Card>
                 ))}
