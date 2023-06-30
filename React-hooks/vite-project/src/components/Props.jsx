@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Props () {
+function Props (props) {
     return (
-        <div>Props</div>
+        <div>{props.title}</div>
     )
 }
 
